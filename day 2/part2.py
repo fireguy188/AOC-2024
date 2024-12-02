@@ -10,6 +10,7 @@ def check(line, dif):
             if removed:
                 return False
 
+            i-2, i-1, i, i+1, i+2
             # removing i-1 means we need to check i-2 works with i, and i works with i+1, then we add 2 to i
             # removing i means we need to check i-1 works with i+1, and then we add 2 to i
             # adding 2 gets done because of the i+1 outside the if
@@ -18,7 +19,7 @@ def check(line, dif):
             if (i == 1 or 1 <= dif(line[i], line[i-2]) <= 3) and (i == len(line)-1 or 1 <= dif(line[i+1], line[i]) <= 3):
                 i += 1
             # removing i
-            elif (i == len(line)-1 or 1 <= dif(line[i+1], line[i-1]) <= 3):
+            elif (i == 0 or i == len(line)-1 or 1 <= dif(line[i+1], line[i-1]) <= 3):
                 i += 1
             else:
                 # can't remove either
