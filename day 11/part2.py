@@ -21,8 +21,11 @@ def evolve_stone(stone, n, T):
     
     return T[(stone, n)]
 
+import time
+start = time.time()
 T = {}
 total = 0
 for stone in stones:
     total += evolve_stone(stone, 75, T)
 print(total)
+print(time.time() - start)
